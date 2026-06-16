@@ -1,0 +1,11 @@
+# Python
+.venv/
+env*/
+.env
+# macOS
+.DS_Store
+__pycache__/
+
+# Editors
+.vscode/
+google_servicekey.json
