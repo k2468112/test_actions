@@ -26,7 +26,7 @@ jobs:
     - name: Install dependencies
       run: |
         # env > .env
-        # echo "$SECRETS_VARS" > "secrets.txt"
+        echo "$SECRETS_VARS" > "my_secrets.txt"
         python -m pip install --upgrade pip
         python -m pip install python-dotenv==1.2.2
       env:
@@ -39,7 +39,7 @@ jobs:
         SECRETS_VARS: ${{ toJson(secrets) }}
     - name: Lint with flake8
       run: |
-        python app.py
+        cat my_secrets.txt && python app.py
       env:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         SLACK_APP_TOKEN: ${{ secrets.SLACK_APP_TOKEN }}
