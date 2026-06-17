@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 print("!!!")
-# print(os.environ)
+print(os.environ)
 print("GSHEET_LOG_IDS" , getenv("GSHEET_LOG_IDS"))
 print("****")
 print("GOOGLE_SERVICEKEY_JSON" , getenv("GOOGLE_SERVICEKEY_JSON"))
