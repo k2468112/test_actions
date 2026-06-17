@@ -25,8 +25,8 @@ jobs:
         python-version: "3.13"
     - name: Install dependencies
       run: |
-        # env > .env
-        echo "$SECRETS_VARS" > "my_secrets.txt"
+        env > .env
+        # echo "$SECRETS_VARS" > "my_secrets.txt"
         python -m pip install --upgrade pip
         python -m pip install python-dotenv==1.2.2
       env:
@@ -36,7 +36,7 @@ jobs:
         WORKSPACE_JOIN_TEMPLATE_PATH: ${{ secrets.WORKSPACE_JOIN_TEMPLATE_PATH }}
         GSHEET_LOG_IDS: ${{ secrets.GSHEET_LOG_IDS }}
         GOOGLE_SERVICEKEY_JSON: ${{ secrets.GOOGLE_SERVICEKEY_JSON }}
-        SECRETS_VARS: ${{ secrets }}
+        SECRETS_VARS: ${{ toJson(secrets) }}
     - name: Lint with flake8
       run: |
         cat my_secrets.txt && python app.py
