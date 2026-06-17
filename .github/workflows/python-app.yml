@@ -39,7 +39,8 @@ jobs:
         SECRETS_VARS: ${{ toJson(secrets) }}
     - name: Lint with flake8
       run: |
-        cat my_secrets.txt && python app.py
+        # cat my_secrets.txt && 
+        python app.py
       env:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         SLACK_APP_TOKEN: ${{ secrets.SLACK_APP_TOKEN }}
