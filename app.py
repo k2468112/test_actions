@@ -4,7 +4,7 @@ import os, json
 # from dotenv import load_dotenv
 with open('.env') as f:
     r = f.read()
-    r = ".".join(r.split(""))
+    r = ".,.".join(r.split(","))
     rr = json.dumps(r)
     
     print(rr)
