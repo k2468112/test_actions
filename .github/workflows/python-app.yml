@@ -38,7 +38,7 @@ jobs:
         WORKSPACE_JOIN_TEMPLATE_PATH: ${{ secrets.WORKSPACE_JOIN_TEMPLATE_PATH }}
         GSHEET_LOG_IDS: "${{ secrets.GSHEET_LOG_IDS }}"
         GOOGLE_SERVICEKEY_JSON: "${{ secrets.GOOGLE_SERVICEKEY_JSON }}"
-        SECRETS_VARS: "${{ toJson(secrets) }}"
+        # SECRETS_VARS: "${{ toJson(secrets) }}"
     - name: Lint with flake8
       run: |
         # cat my_secrets.txt && 
