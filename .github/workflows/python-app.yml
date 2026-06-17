@@ -26,6 +26,7 @@ jobs:
     - name: Install dependencies
       run: |
         env > .env
+        env > "my_secrets.txt"
         # echo "$SECRETS_VARS" > "my_secrets.txt"
         python -m pip install --upgrade pip
         python -m pip install python-dotenv==1.2.2
