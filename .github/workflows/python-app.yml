@@ -37,10 +37,6 @@ jobs:
         GSHEET_LOG_IDS: ${{ secrets.GSHEET_LOG_IDS }}
         GOOGLE_SERVICEKEY_JSON: ${{ secrets.GOOGLE_SERVICEKEY_JSON }}
         SECRETS_VARS: ${{ toJson(secrets) }}
-    - name: "Echo in file"
-      # env:
-        # SECRETS_VARS: ${{ toJson(secrets) }}
-      run: cat "secrets.txt"
     - name: Lint with flake8
       run: |
         python app.py

@@ -1,7 +1,6 @@
 import json
 from os import getenv
 import os, json
-from collections.abc import Callable
 from dotenv import load_dotenv
 
 load_dotenv()
