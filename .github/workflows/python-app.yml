@@ -29,6 +29,13 @@ jobs:
         python -m pip install python-dotenv==1.2.2
 
     - name: Lint with flake8
+      env:
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        SLACK_APP_TOKEN: ${{ secrets.SLACK_APP_TOKEN }}
+        SLACK_SIGN_SECRET: ${{ secrets.SLACK_SIGN_SECRET }}
+        WORKSPACE_JOIN_TEMPLATE_PATH: ${{ secrets.WORKSPACE_JOIN_TEMPLATE_PATH }}
+        GSHEET_LOG_IDS: ${{ secrets.GSHEET_LOG_IDS }}
+        GOOGLE_SERVICEKEY_JSON: ${{ secrets.GOOGLE_SERVICEKEY_JSON }}
       run: |
         python app.py
       
